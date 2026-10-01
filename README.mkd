@@ -1,0 +1,7 @@
+# Console renderer
+
+simple console renderer that emulates a monospace, bitmapfont console.
+
+resources:
+- font: https://www.gridsagegames.com/rexpaint
+- sdl pixelbuffer : https://gist.github.com/superzazu/f24aaf202248440c6097b85105d0bbae
