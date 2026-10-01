@@ -9,18 +9,7 @@ BitmapFont :: struct{
     data: []u8 // grayscale values, 0-255
 }
 
-
-// NOTE: Referring to a byte array here for single byte references. Just for ergonomics
-// I guess you can't just declare a slice of bytes and shuffle it over to
-// a procedure to use it, you must obviously allocate the backing array first.
-// So for now, since I'm tired, I'll just do this to avoid constant allocations for single bytes
-// FIXME: Super hacky..
-ascii := [256]u8{}
-
 load_bitmap_font :: proc(path: cstring) -> BitmapFont{
-    for i in 0..<256{
-        ascii[i] = byte(i)
-    }
 
     //  Load bitmapfont that will be used with the console
     bitmap_size : [2]i32
