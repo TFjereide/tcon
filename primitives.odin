@@ -7,5 +7,4 @@ IRect:: struct{
 
 IVec2 :: [2]int
 
-RGB8 :: [3]u8
 

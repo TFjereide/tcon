@@ -9,11 +9,11 @@ Console :: struct{
     size : IVec2,
     tiles : []Tile,
     font : BitmapFont,
-    color_palette: []RGB8
+    color_palette: []Color
 }
 
 
-make_console :: proc(size : IVec2, font : BitmapFont, color_palette: []RGB8) -> Console{
+make_console :: proc(size : IVec2, font : BitmapFont, color_palette: []Color) -> Console{
     return {
         size = size,
         tiles = make([]Tile, size.x*size.y),
@@ -24,7 +24,7 @@ make_console :: proc(size : IVec2, font : BitmapFont, color_palette: []RGB8) -> 
 
 
 // Render to screentexture
-console_draw_present:: proc( console:^Console, buffer : []RGB8){
+console_draw_present:: proc( console:^Console, buffer : []Color){
     num_tiles := [2]int{console.font.pixel_size.x / console.font.cell_size.x, console.font.pixel_size.y / console.font.cell_size.y}
     pixel_coord :[2]int
     tile_coord :[2]int
